@@ -5,28 +5,28 @@ using ContactServices.API.Repository.Interfaces;
 
 namespace ContactServices.API.Repository.Implementations
 {
-    public class ContactService: IContactService
+    public class ContactServices: IContactService
     {
         private readonly IContactRepository _repository;
         private readonly IMapper _mapper;
 
-        public ContactService(IContactRepository repository, IMapper mapper)
+        public ContactServices(IContactRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<ContactResponseDto> CreateContactAsync(ContactRequestDto request)
+        public async Task<CreateContactDto> CreateContactAsync(CreateContactDto request)
         {
             var entity = _mapper.Map<Contact>(request);
 
             await _repository.AddAsync(entity);
             await _repository.SaveChangesAsync();
 
-            return _mapper.Map<ContactResponseDto>(entity);
+            return _mapper.Map<CreateContactDto>(entity);
         }
 
-        public async Task<ContactResponseDto> UpdateContactAsync(int id, ContactRequestDto request)
+        public async Task<CreateContactDto> UpdateContactAsync(int id, CreateContactDto request)
         {
             var existing = await _repository.GetByIdAsync(id);
             if (existing == null)
@@ -37,7 +37,7 @@ namespace ContactServices.API.Repository.Implementations
             await _repository.UpdateAsync(existing);
             await _repository.SaveChangesAsync();
 
-            return _mapper.Map<ContactResponseDto>(existing);
+            return _mapper.Map<CreateContactDto>(existing);
         }
 
         public async Task<bool> DeleteContactAsync(int id)

@@ -71,7 +71,7 @@ builder.Services.AddMassTransit(x =>
 });
 #region Repositories
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
-builder.Services.AddScoped<IContactService, ContactService>();
+//builder.Services.AddScoped<IContactService, ContactServices>();
 builder.Services.AddAutoMapper(typeof(ContactMappingProfile));
 builder.Services.AddValidatorsFromAssemblyContaining<ContactValidator>();
 #endregion
