@@ -1,4 +1,4 @@
-﻿namespace ContactService.API.DTOs
+﻿namespace ContactServices.API.DTOs
 {
     public class CreateContactDto
     {

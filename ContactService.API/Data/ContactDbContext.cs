@@ -1,7 +1,7 @@
-﻿using ContactService.API.Models;
+﻿using ContactServices.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContactService.API.Data
+namespace ContactServices.API.Data
 {
     public class ContactDbContext : DbContext
     {

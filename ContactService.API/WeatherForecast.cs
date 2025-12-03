@@ -1,4 +1,4 @@
-namespace ContactService.API
+namespace ContactServices.API
 {
     public class WeatherForecast
     {

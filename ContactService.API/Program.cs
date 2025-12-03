@@ -1,5 +1,11 @@
 using AutoMapper;
-using ContactService.API.Data;
+using ContactServices.API.Data;
+using ContactServices.API.Mappings;
+using ContactServices.API.Repository.Implementations;
+using ContactServices.API.Repository.Interfaces;
+using ContactServices.API.Validators;
+
+using FluentValidation;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
@@ -63,6 +69,12 @@ builder.Services.AddMassTransit(x =>
         });
     });
 });
+#region Repositories
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddAutoMapper(typeof(ContactMappingProfile));
+builder.Services.AddValidatorsFromAssemblyContaining<ContactValidator>();
+#endregion
 
 var app = builder.Build();
 
