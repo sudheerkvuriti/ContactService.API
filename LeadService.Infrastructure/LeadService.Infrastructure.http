@@ -1,0 +1,6 @@
+@LeadService.Infrastructure_HostAddress = http://localhost:5100
+
+GET {{LeadService.Infrastructure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
