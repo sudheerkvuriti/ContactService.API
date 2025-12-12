@@ -10,4 +10,18 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Features\Leads\Commands\" />
+    <Folder Include="Features\Leads\Queries\" />
+    <Folder Include="Features\Validators\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="Behaviors\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeadService.Domain\LeadService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

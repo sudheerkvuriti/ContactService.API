@@ -21,6 +21,18 @@ Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
 Install-Package MassTransit
 
 
+
+JWT
+---
+
+Microsoft.AspNetCore.Authentication.JwtBearer
+System.IdentityModel.Tokens.Jwt
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.AspNetCore.Cryptography.KeyDerivation(For password Hasing)
+
+
 NOTE:
 
 Put secrets in config (appsettings.json) — use env vars in prod
